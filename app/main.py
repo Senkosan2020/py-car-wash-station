@@ -1,5 +1,10 @@
 class Car:
-    def __init__(self, comfort_class: int, clean_mark: int, brand: str) -> None:
+    def __init__(
+            self,
+            comfort_class: int,
+            clean_mark: int,
+            brand: str
+    ) -> None:
         self.comfort_class = comfort_class
         self.clean_mark = clean_mark
         self.brand = brand
@@ -14,15 +19,23 @@ class CarWashStation:
         count_of_ratings: int
     ) -> None:
         if distance_from_city_center <= 0:
-            raise ValueError("distance_from_city_center must be greater than 0.")
+            raise ValueError(
+                "distance_from_city_center must be greater than 0."
+            )
         self.distance_from_city_center = distance_from_city_center
         self.clean_power = clean_power
         self.average_rating = average_rating
         self.count_of_ratings = count_of_ratings
 
-    def calculate_washing_price(self, car: Car) -> float:
+    def calculate_washing_price(
+            self,
+            car: Car
+    ) -> float:
         if self.distance_from_city_center == 0:
-            raise ValueError("distance_from_city_center cannot be zero during price calculation.")
+            raise ValueError(
+                "distance_from_city_center cannot /"
+                "be zero during price calculation."
+            )
         price = (
             car.comfort_class
             * (self.clean_power - car.clean_mark)
